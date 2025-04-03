@@ -58,9 +58,9 @@ pipeline {
                 script {
                     sh '''
                     ssh -i $SSH_KEY_PATH $EC2_SSH_USER@$EC2_HOST "cd ~/MERN-DOCKER-COMPOSE && \
-                    docker tag project_backend:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_BACKEND_REPO:latest && \
+                    docker tag mern-docker-compose_backend:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_BACKEND_REPO:latest && \
                     docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_BACKEND_REPO:latest && \
-                    docker tag project_frontend:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_FRONTEND_REPO:latest && \
+                    docker tag mern-docker-compose_frontend:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_FRONTEND_REPO:latest && \
                     docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_FRONTEND_REPO:latest"
                     '''
                 }
